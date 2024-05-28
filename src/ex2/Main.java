@@ -1,14 +1,11 @@
 package ex2;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Integer> randomNums = new ArrayList<>();
+        List<Integer> randomNums = new ArrayList<>();
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many random numbers do you want to generate?");
@@ -42,18 +39,18 @@ public class Main {
 //        oddOrEvenStamp(randomNums, oddOrEvenChoice == 1);
     }
 
-    public static ArrayList<Integer> duplicateAndReverse(ArrayList<Integer> startingArray) {
+    public static List<Integer> duplicateAndReverse(List<Integer> startingArray) {
 
         //to avoid ruining the starting array, I'm gonna create a copy of it just to reverse it.
-        ArrayList<Integer> duplicatedAndSortedArray = new ArrayList<>(startingArray);
-        ArrayList<Integer> duplicatedArray = new ArrayList<>(startingArray);
+        List<Integer> duplicatedAndSortedArray = new ArrayList<>(startingArray);
+        List<Integer> duplicatedArray = new ArrayList<>(startingArray);
         Collections.reverse(duplicatedArray);
         duplicatedAndSortedArray.addAll(duplicatedArray);
 
         return duplicatedAndSortedArray;
     }
 
-    public static void oddOrEvenStamp(ArrayList<Integer> startingArray, boolean order) {
+    public static void oddOrEvenStamp(List<Integer> startingArray, boolean order) {
         for (int i = order ? 0 : 1; i < startingArray.size(); i += 2) {
             System.out.println(startingArray.get(i));
         }

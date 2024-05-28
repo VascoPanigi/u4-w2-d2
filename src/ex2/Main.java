@@ -5,17 +5,14 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        List<Integer> randomNums = new ArrayList<>();
-        Random random = new Random();
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many random numbers do you want to generate?");
 
         int insertedNum = Integer.parseInt(scanner.nextLine());
 
-        for (int i = 0; i < insertedNum; i++) {
-            randomNums.add(random.nextInt(0, 101));
-        }
-        Collections.sort(randomNums);
+        List<Integer> randomNums = createList(insertedNum);
+
         System.out.println(randomNums);
         System.out.println(duplicateAndReverse(randomNums));
         System.out.println(randomNums);
@@ -36,7 +33,22 @@ public class Main {
 
             }
         }
+        scanner.close();
 //        oddOrEvenStamp(randomNums, oddOrEvenChoice == 1);
+    }
+
+    public static List<Integer> createList(int insertedNum) {
+        List<Integer> randomNums = new ArrayList<>();
+        Random random = new Random();
+
+
+        for (int i = 0; i < insertedNum; i++) {
+            randomNums.add(random.nextInt(0, 101));
+        }
+
+        Collections.sort(randomNums);
+
+        return randomNums;
     }
 
     public static List<Integer> duplicateAndReverse(List<Integer> startingArray) {

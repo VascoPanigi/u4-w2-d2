@@ -15,7 +15,6 @@ public class Main {
 
         System.out.println(randomNums);
         System.out.println(duplicateAndReverse(randomNums));
-        System.out.println(randomNums);
 
 
         System.out.println("Do you wanna to stamp only numbers in Odd or Even indexes?");
